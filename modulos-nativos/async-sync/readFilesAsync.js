@@ -1,8 +1,4 @@
 //Manera asincrona de leer archivos con el modulo fs de node.js (version "vieja")
-//Para leer archivos de manera asincrona se utiliza la funcion readFile
-/*La funcion recibe 3 parametros, el primero es el nombre del archivo, el segundo es el formato en el que se quiere leer el archivo y el tercero es una funcion que recibe dos parametros, 
-el primero es un error en caso de que ocurra y el segundo es el contenido del archivo*/
-//Asyncrono significa que el programa no se detiene a esperar a que se termine de leer un archivo para continuar con el resto del programa
 
 const fs = require('node:fs');
 
@@ -27,4 +23,7 @@ fs.readFile('archivo2.txt', 'utf-8', (error, data) => {
     console.log(data);
 });
 
+//Para leer archivos de manera asincrona se utiliza la funcion readFile.
+/*La funcion recibe 3 parametros, el primero es el nombre del archivo, el segundo es el formato en el que se quiere leer el archivo y el tercero es una funcion que recibe dos parametros, 
+el primero es un error en caso de que ocurra y el segundo es el contenido del archivo.*/
 

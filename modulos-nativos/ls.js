@@ -1,6 +1,3 @@
-//El modulo nativo ls.js es un modulo que nos permite listar los archivos de un directorio
-//Es util para obtener información sobre los archivos de un directorio
-
 //Ejemplo integrador: Listado de archivos de un directorio
 
 const fs = require('node:fs/promises');
@@ -45,3 +42,12 @@ async function ls (folder) {
 }  
 
 ls(folder);
+
+/*El modulo nativo ls.js es un modulo que nos permite listar los archivos de un directorio
+Es util para obtener información sobre los archivos de un directorio
+Para utilizarlo, se debe ejecutar el script con el nombre del directorio que se quiere listar.
+Por ejemplo, si se quiere listar los archivos del directorio actual, se debe ejecutar el siguiente comando:
+node ls.js .
+Si se quiere listar los archivos de un directorio específico, se debe ejecutar el comando con el nombre del directorio:
+node ls.js nombre_del_directorio
+*/

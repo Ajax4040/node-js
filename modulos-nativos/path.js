@@ -1,7 +1,3 @@
-/*El módulo nativo "path" en Node.js proporciona utilidades para trabajar con rutas de archivos 
-y directorios. Es útil para manipular y construir rutas de manera segura, 
-independientemente del sistema operativo.*/
-
 //Ejemplo de uso de la libreria path
 const path = require('path');
 
@@ -28,6 +24,10 @@ console.log('🔸 Ruta absoluta:', absolute);
 //Obtener la extension del archivo con el metodo extname
 const ext = path.extname(filePath);
 console.log('🔸 Extension del archivo:', ext);
+
+/*El módulo nativo "path" en Node.js proporciona utilidades para trabajar con rutas de archivos 
+y directorios. Es útil para manipular y construir rutas de manera segura, 
+independientemente del sistema operativo.*/
 
 /*Comandos para acceder a los archivos:
 1) .\ significa que estamos en el directorio actual

@@ -1,6 +1,3 @@
-//Un modulo es un archivo que contiene un conjunto de funciones que puedes importar a tu archivo
-//Un modulo nativo de Node es un modulo que ya viene con Node.js
-//Ejemplo 1 de un módulo nativo de Node.js uso de "os" (operating system)
 const os = require('node:os');
 
 console.log('🔸Información del sistema operativo');
@@ -23,5 +20,7 @@ console.log('---------------------------------');
 console.log('🔸Dirección IP:', os.networkInterfaces());
 console.log('---------------------------------');
 
-
+//Un modulo es un archivo que contiene un conjunto de funciones que puedes importar a tu archivo
+//Un modulo nativo de Node es un modulo que ya viene con Node.js
+//Ejemplo 1 de un módulo nativo de Node.js uso de "os" (operating system)
 

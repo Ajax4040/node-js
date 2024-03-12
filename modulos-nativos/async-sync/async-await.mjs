@@ -1,6 +1,3 @@
-//El await detiene la ejecucion de la funcion async hasta que la promesa sea cumplida
-//Si usamos await en un archivo con extension .mjs, se puede usar el await en el nivel superior del archivo o el cuerpo
-
 import { readFile } from 'node:fs/promises';
 
 console.log('Leyendo el archivo 1...');
@@ -17,3 +14,8 @@ console.log(text2);
 console.log('Aquí puedo hacer otra cosa...');
 
 console.log('Fin del programa.');
+
+/*El await detiene la ejecucion de la funcion async hasta que la promesa sea cumplida.
+Si usamos await en un archivo con extension .mjs, se puede usar el await en el nivel superior del archivo o el cuerpo.
+El await solo se puede usar dentro de una funcion async.
+*/

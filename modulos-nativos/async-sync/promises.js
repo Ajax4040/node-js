@@ -1,10 +1,4 @@
 //Uso de promesas para leer archivos de manera asincrona con el modulo fs de node.js
-/*Las promesas son un objeto que representa la terminacion o el fracaso de una operacion asincrona
-Las promesas tienen 3 estados: pendiente, cumplida y rechazada
-Las promesas tienen 2 metodos: then y catch
-El metodo then recibe una funcion que se ejecutara si la promesa se cumple
-El metodo catch recibe una funcion que se ejecutara si la promesa se rechaza
-*/
 
 const fs = require('node:fs');
 const { promisify } = require('node:util');
@@ -33,3 +27,10 @@ readFile('archivo2.txt', 'utf-8')
 console.log('Mientras puedo hacer otra cosa...');
 
 console.log('Fin del programa.')
+
+/*Las promesas son un objeto que representa la terminacion o el fracaso de una operacion asincrona
+Las promesas tienen 3 estados: pendiente, cumplida y rechazada
+Las promesas tienen 2 metodos: then y catch
+El metodo then recibe una funcion que se ejecutara si la promesa se cumple
+El metodo catch recibe una funcion que se ejecutara si la promesa se rechaza
+*/
