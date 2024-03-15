@@ -1,0 +1,16 @@
+#Usando la extension de vscode REST Client
+###
+GET http://localhost:1234/
+
+###
+GET http://localhost:1234/about
+
+###
+GET http://localhost:1234/imagen.jpg
+
+###
+GET http://localhost:1234/ruta-no-definida
+
+#Con los 3 # se pueden hacer varias peticiones
+#Con uno solo se puede comentar una linea
+#El servidor debe estar corriendo para hacer las peticiones
