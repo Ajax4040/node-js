@@ -3,22 +3,42 @@
 const express = require('express');//debo instalar express con npm install express
 const movies = require('./movies.json');//importo el archivo movies.json
 const crypto = require('node:crypto');//modulo para encriptar contraseñas
-
+const cors = require('cors');//debo instalar cors con npm install cors
 const { validateMovie , validatePartialMovie } = require('./schemas/movies-schema');//importo la funcion de validacion de peliculas
 
 const app = express();
 app.disable('x-powered-by');//ocultar la cabecera de la aplicación para evitar ataques
 app.use(express.json());//middleware para poder leer el body de las peticiones
 
+//CORS---------------------------------------------------------------------
+app.use(cors({
+    origin: (origin, callback) => {
+      const ACCEPTED_ORIGINS = [
+        'http://localhost:8080',
+        'http://localhost:1234',
+        'https://movies.com',
+        'https://midu.dev'
+      ]
+  
+      if (ACCEPTED_ORIGINS.includes(origin)) {
+        return callback(null, true)
+      }
+  
+      if (!origin) {
+        return callback(null, true)
+      }
+  
+      return callback(new Error('Not allowed by CORS'))
+    }
+  }))
+/*CORS es un mecanismo de seguridad que permite restringir las peticiones que se pueden hacer a un servidor.
+Es una medida de seguridad que se implementa en el lado del servidor para evitar que un cliente malicioso pueda hacer peticiones 
+a un servidor y obtener información sensible.
+Se encarga de manejar las peticiones que se hacen a nuestro servidor y decidir si se aceptan o no.
+*/
+
 //GET---------------------------------------------------------------------
-app.get('/', (req, res) => {
-    res.header('Access-Control-Allow-Origin', '*')
-    res.send('<h1>API REST</h1>');
-});//ruta principal
-
 app.get('/movies', (req, res) => {
-    res.header('Access-Control-Allow-Origin', '*')//cabecera para permitir el acceso a la API desde cualquier origen y evitar errores de CORS
-
     const { genre } = req.query;//obtengo el parametro "genre" de la url
     if (genre) {
         const filteredMovies = movies.filter(
@@ -62,17 +82,18 @@ app.post('/movies', (req, res) => {
 
 //DELETE------------------------------------------------------------------
 app.delete('/movies/:id', (req, res) => {
-    const { id } = req.params
-    const movieIndex = movies.findIndex(movie => movie.id === id)
-  
-    if (movieIndex === -1) {
-      return res.status(404).json({ message: 'Movie not found' })
-    }
-  
-    movies.splice(movieIndex, 1)
-  
-    return res.json({ message: 'Movie deleted' })
-  })
+  const { id } = req.params
+  const movieIndex = movies.findIndex(movie => movie.id === id)
+
+  if (movieIndex === -1) {
+    return res.status(404).json({ message: 'Movie not found' })
+  }
+
+  movies.splice(movieIndex, 1)
+
+  return res.json({ message: 'Movie deleted' })
+})
+
 
 //PATCH-------------------------------------------------------------------
 app.patch('/movies/:id', (req, res) => {
@@ -103,7 +124,7 @@ app.use((req, res) => {
     res.status(404).send('<h1>Not Found</h1>');
 });//ruta no encontrada
 
-
+//LISTEN------------------------------------------------------------------
 const desiredPort = process.env.PORT || 1234;
 
 app.listen(desiredPort, () => {
