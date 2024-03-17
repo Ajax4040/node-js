@@ -20,9 +20,11 @@ Content-Type: application/json
     "genre": ["Drama"],
     "rate": 8
 }
+### Borrar una película
+DELETE http://localhost:1234/movies/f79d2894-ab02-49a3-8299-08f24a88dfc9
 
 ### Update a movie
-PATCH  http://localhost:1234/movies/6da8f85d-f347-4cd2-8b1c-c7090abde30c
+PATCH  http://localhost:1234/movies/f79d2894-ab02-49a3-8299-08f24a88dfc9
 Content-Type: application/json
 
 {
