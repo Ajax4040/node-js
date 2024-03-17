@@ -4,6 +4,7 @@
   "description": "",
   "main": "api-rest.js",
   "scripts": {
+    "start": "node api-rest.js",
     "dev1": "nodemon api-rest.js"
   },
   "keywords": [],
