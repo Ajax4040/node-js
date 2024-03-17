@@ -22,9 +22,9 @@ Content-Type: application/json
 }
 
 ### Update a movie
-PATCH  http://localhost:1234/movies/d3acaab9-9ff4-480a-a7f1-816dc0e0c15a
+PATCH  http://localhost:1234/movies/6da8f85d-f347-4cd2-8b1c-c7090abde30c
 Content-Type: application/json
 
 {
-    "poster": "https://es.web.img3.acsta.net/c_310_420/pictures/24/02/20/17/42/2385575.jpg"
+    "year": 1999
 }
